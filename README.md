@@ -12,7 +12,7 @@ The Real Return Calculator separates the money you appear to have from the money
 
 The core idea: a portfolio that grows 6 percent while inflation runs 3.5 percent gains real ground, while idle cash loses purchasing power every year even though the dollar figure never changes.
 
-## How to use it
+## Use
 
 1. Open `index.html` in a browser, or visit the GitHub Pages site.
 2. Enter the amount today, the horizon in years, annual inflation, and your nominal return.
@@ -33,9 +33,26 @@ Outputs are the nominal end value, the inflation-adjusted real value, the eroded
 
 Nominal value is `amount * (1 + nominalReturn)^years`. Real value divides that by `(1 + inflation)^years`. Idle cash is `amount / (1 + inflation)^years`. Break-even return equals the inflation rate, the point where real value holds flat. Rates are constant and compounding is annual.
 
+## Why this exists
+
+A balance that grows in dollars can still lose purchasing power, and the gap is easy to miss without doing the math. This is a single HTML file that shows the nominal and real numbers side by side, with no tracking and no dependencies. MIT licensed.
+
 ## Privacy
 
-Runs fully client side. No analytics, no network calls, no storage.
+Runs fully client side. No analytics, no network calls, no storage. The one exception: your light or dark theme choice is saved in localStorage under the key `theme`.
+
+## Run locally
+
+```
+git clone https://github.com/0xelitesystem/real-return-calculator
+cd real-return-calculator
+```
+
+Open `index.html` in a browser, or serve the folder with `python -m http.server` and visit http://localhost:8000.
+
+## Build
+
+No build step. It is a single `index.html` file.
 
 ## Related tools
 
